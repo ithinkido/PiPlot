@@ -69,7 +69,8 @@ By default the Raspberry Pi uses this serial port for the console login via the 
 https://github.com/ithinkido/penplotter-webserver/tree/flowcontrol  
 
 
-[<p align="center"><img src="https://raw.githubusercontent.com/ithinkido/PiPlot/main/images/screenshot.png?sanitize=true" width=80%></p>](https://github.com/ithinkido/penplotter-webserver/tree/flowcontrol "Pen-plotter web server screen shot")  
+[<p align="center"><img src="https://raw.githubusercontent.com/ithinkido/penplotter-webserver/flowcontrol/docs/img/Demo.gif?sanitize=true" width=80%></p>](https://github.com/ithinkido/penplotter-webserver/tree/flowcontrol "Pen-plotter web server screen shot")  
+
 
 # Manually sending files to your plotter  
 
