@@ -15,7 +15,9 @@ spinner()
     printf "    \b\b\b\b"
 }
 printf "\033[?25l"
-echo "Upgrading Pi. This could take a while ..."
+lsb_release -ds
+echo ""
+echo "Updating apt. This could take a while ..."
 (sudo apt-get update > /dev/null
 wait
 sudo apt-get -y upgrade -qq > /dev/null) & spinner
