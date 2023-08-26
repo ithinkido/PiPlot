@@ -94,7 +94,7 @@ eg. Lets say you found [this](https://github.com/ithinkido/PiPlot/blob/main/imag
 If you found an svg file, then vpype makes it easy, (presuming you have [vpype](https://github.com/abey79/vpype "vpype") installed - you really should - it rocks !)  
 [<p align="center"><img src="https://raw.githubusercontent.com/abey79/vpype/master/docs/images/banner.png?sanitize=true" width= "50%"></p>](https://github.com/abey79/vpype "vpype")
     
-    wget -O - https://raw.githubusercontent.com/ithinkido/PiPlot/main/images/columbia_A4.svg | vpype read - layout a4 -l show write --layer-label Pen%d -f hpgl -d hp7475a - | cat > /dev/ttyAMA0
+    wget -O - https://raw.githubusercontent.com/ithinkido/PiPlot/main/images/columbia_A4.svg | vpype read - layout --landscape a4  write -f hpgl -d hp7475a - | cat > /dev/ttyAMA0
 
 [<p align="center"><img src="https://raw.githubusercontent.com/ithinkido/PiPlot/main/images/columbia_A4.svg?sanitize=true" width=80%></p>](https://github.com/ithinkido/PiPlot/blob/main/images/columbia_A4.svg "Columbia space shuttle")
 
