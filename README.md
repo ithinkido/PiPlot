@@ -128,4 +128,4 @@ add
 
 <br><br>
 
-![visitors](https://vbr.wocr.tk/badge?page_id=ithinkido.PiPlot)
+![visitors](https://vbr.nathanchung.dev/badge?page_id=ithinkido.PiPlot)
