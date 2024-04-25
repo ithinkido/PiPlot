@@ -1,5 +1,12 @@
 #!/bin/bash
 
+DIR="/boot/firmware"
+if [ ! -d "$DIR" ] ; then
+    DIR="/boot"
+fi
+echo " Path: $DIR"
+
+
 spinner()
 {
     local pid=$!
