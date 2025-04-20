@@ -119,6 +119,29 @@ add
     
     @reboot stty -F /dev/ttyUSB0 9600 crtscts && nc -l -k 1234 > /dev/ttyUSB0
 
+# Buttons for custom functions  
+
+The PiPlot has two buttons that are connectend through de-bouncing ciruits to GPIO 22 and GPIO 27 on the Raspberry Pi.
+These can be used to trigger custom functions when pressed that the user creates.  
+
+A basic example could be 
+    
+    @import RPi.GPIO as GPIO
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    
+    def start_button(channel):
+        print 'Start button pressed!'
+
+    def stop_button(channel):
+        print'Stop button pressed!'
+
+    GPIO.add_event_detect(27, GPIO.RISING, callback=start_button, bouncetime=100)
+    GPIO.add_event_detect(22, GPIO.RISING, callback=stop_button, bouncetime=100)
+
+
 ## Foot Notes
 
 * The Pi does not remember port configuration very well. It is good practice to call `sudo stty -F /dev/ttyAMA0 9600 crtscts` to reconfigure the port for hardware flow control before each plot( adjust baud to match your machine).
