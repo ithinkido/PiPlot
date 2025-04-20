@@ -122,7 +122,7 @@ add
 # Buttons for custom functions  
 
 The PiPlot has two buttons that are connectend through de-bouncing ciruits to GPIO 22 and GPIO 27 on the Raspberry Pi.
-These can be used to trigger custom functions when pressed that the user creates.  
+These can be used to trigger custom functions that the user creates.  
 
 A basic example could be 
     
