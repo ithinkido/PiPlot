@@ -30,7 +30,6 @@ lsb_release -ds
 echo ""
 echo "Updating apt. This could take a while ..."
 
-# Run apt update + upgrade in background
 (
     sudo apt-get update > /dev/null
     sudo apt-get -y upgrade -qq > /dev/null
@@ -39,7 +38,6 @@ spinner $!
 
 wait
 
-# ---- config edits ----
 if ! grep -q '#flow control serial' "$DIR/config.txt" ; then
     echo $'\n#flow control serial' | sudo tee -a "$DIR/config.txt" >/dev/null
 fi
@@ -86,10 +84,10 @@ else
         sudo systemctl enable piplot.service
         sudo systemctl start piplot.service
 
-        echo "PiPlot service installed & enabled."
+        echo "PiPlot service enabled."
 
     else
-        echo "Service already exists. Ensuring it is enabled..."
+        echo "Service already exists"
         sudo systemctl enable piplot.service
     fi
 fi
