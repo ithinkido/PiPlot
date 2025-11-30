@@ -32,7 +32,7 @@ echo "Updating apt. This could take a while ..."
 
 (
     sudo apt-get update > /dev/null
-    sudo apt-get -y upgrade -qq > /dev/null
+    sudo apt-get -y upgrade -qq > /dev/null 2>&1
 ) &
 spinner $!
 
@@ -81,10 +81,11 @@ else
         sudo chmod 644 "$PP_SERVICE"
 
         sudo systemctl daemon-reload
-        sudo systemctl enable piplot.service
-        sudo systemctl start piplot.service
-
-        echo "PiPlot service enabled."
+        if sudo systemctl enable piplot.service --quiet; then
+            echo "PiPlot startup service enabled."
+        else
+            echo "Error: Failed to enable PiPlot service!" >&2
+        fi
 
     else
         echo "Service already exists"
