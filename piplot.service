@@ -1,0 +1,10 @@
+[Unit]
+Description=Set serial port options for ttyAMA0
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/stty -F /dev/ttyAMA0 9600 crtscts
+
+[Install]
+WantedBy=multi-user.target
